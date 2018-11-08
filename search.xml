@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentOS6配置Http Api远程操作Docker(持续更新)]]></title>
+    <url>%2F2018%2F11%2F08%2FCentOS6%E9%85%8D%E7%BD%AEHttp-Api%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9CDocker%2F</url>
+    <content type="text"><![CDATA[本地通过maven打包Docker镜像并上传服务器需要配置Docker API远程操作。 CentOS 6配置修改配置文件/etc/sysconfig/docker里的配置1vim /etc/sysconfig/docker 把原来的other_args=改为other_args=&quot;-H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375&quot; 重启docker使配置生效1service docker restart 检查下2375端口是不是在监听状态，有就表示配置成功，外网访问注意下防火墙1netstat -nap | grep 2375 访问服务器的Docker1http://host:port/info host: 你服务器的IP地址或域名port：端口号(本文的为2375)]]></content>
+      <categories>
+        <category>Docker</category>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CentOS6.9安装Docker]]></title>
     <url>%2F2018%2F11%2F08%2FCentOS6-9%E5%AE%89%E8%A3%85Docker%2F</url>
     <content type="text"><![CDATA[安装yum源1yum -y install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm 更新yum1yum update -y 安装docker1yum install docker-io -y 查看docker版本1docker version 启动docker服务1service docker start]]></content>
