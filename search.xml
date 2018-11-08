@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentOS6.9安装Docker]]></title>
+    <url>%2F2018%2F11%2F08%2FCentOS6-9%E5%AE%89%E8%A3%85Docker%2F</url>
+    <content type="text"><![CDATA[安装yum源1yum -y install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm 更新yum1yum update -y 安装docker1yum install docker-io -y 查看docker版本1docker version 启动docker服务1service docker start]]></content>
+      <categories>
+        <category>Docker</category>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git常用命令(持续更新)]]></title>
     <url>%2F2018%2F10%2F26%2FGit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[初始化命令初始化本地仓库1git init config配置1234git config --list #查看配置git config --system user.name #系统级配置git config --global user.name #全局配置，系统用户级git config user.name #仓库级配置 克隆远程仓库到本地12git clone &lt;remote-url&gt;git clone &lt;remote-url&gt; myrep #myrep作为本地仓库名 remot 远程仓库123456git remote -v #查看远程仓库git remote show origin #查看远程仓库git remote add origin &lt;remote-url&gt; #添加远程仓库git remote set-url origin &lt;URL&gt; #修改远程仓库地址git remote rename &lt;remote-name&gt; paul #重命名远程仓库git remote rm paul #移除远程仓库 基础命令查看文件状态12git statusgit status -s #状态简览 暂存已修改文件12git add fileNamegit add . #暂存所有已修改文件 提交更新12git commit -m "commit message"git commit -a -m "commit message" #跳过暂存区，直接提交 推送到远程仓库12git pushgit push origin master 从远程仓库拉取数据1git fetch [remote-name] 合并分支1git merge 与远程仓库同步(fetch+merge)1git pull 分支命令查看分支123456git branch #查看分支，前面带星号*的，是当前分支git branch -r #查看所有远程分支git branch -a #查看所有分支(本地跟远程)git branch -v #查看每个分支最后一次提交git branch --merged #查看已合并到当前分支的分支git branch --no-merged #查看未合并到当前分支的分支 创建分支123git branch &lt;branch-name&gt; #创建分支git checkout -b &lt;branch-name&gt; #创建并切换到本地分支git checkout -b &lt;branch-name&gt; origin/&lt;branch-name&gt; #创建并切换到远程分支 删除分支12git branch -d &lt;remote-branchname&gt; #删除本地分支，&lt;remote-branchname&gt;：分支名称git push origin --delete &lt;remote-branchname&gt; #删除远程分支 重命名1git branch -m &lt;new-branch-name&gt; 切换分支1git checkout &lt;branch-name&gt; #切换分支 合并分支12git merge hotfix #把 hotfix 分支，合并到当前分支git mergetool #图形化解决冲突的工具 标签命令123456789git tag #查看标签git tag -a &lt;version-number&gt; -m "my version 1.4" #创建附注标签，默认tag是打在最近的一次commit上git tag &lt;version-number&gt; #创建轻量标签&lt;version-number&gt;:v1.0.0git tag -a &lt;version-number&gt; &lt;commit-id&gt; #对某次提交后打标签git push origin &lt;version-number&gt; #上传某个标签，GIT 默认不会 push 标签到远程仓库git push origin --tags #上传所有不在远程仓库的标签git checkout -b version2 v2.0.0 #检出标签git tag -d &lt;tag-name&gt; #删除本地标签git push origin :refs/tags/&lt;tag-name&gt; #删除远程标签 回退还原12345678git fetch --all &amp;&amp; git reset --hard origin/master #抛弃本地所有的修改，回到远程仓库的状态git checkout -b branch_name tag_name #回退到指定标签版本git checkout &lt;file-name&gt; #放弃工作区的修改git checkout . #放弃所有修改git reset &lt;commit-id&gt; #默认就是-mixed参数。git reset –mixed HEAD^ #回退至上个版本，它将重置HEAD到另外一个commit,并且重置暂存区以便和HEAD相匹配，但是也到此为止。工作区不会被更改。git reset –soft HEAD~3 #回退至三个版本之前，只回退了commit的信息，暂存区和工作区与回退之前保持一致。如果还要提交，直接commit即可 git reset –hard &lt;commit-id&gt; #彻底回退到指定commit-id的状态，暂存区和工作区也会变为指定commit-id版本的内容 其它命令diff比较12git diff #比较 暂存区－工作区git diff --staged #比较 仓库－暂存区 提交历史12$ git log$ git log --stat #展示提交的简略统计信息]]></content>
